@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Multiple image hovering animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .main1 {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            position: relative;
+        }
+
+        .elem {
+            height: 110px;
+            width: 100%;
+            border-bottom: 2px solid white;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .elem h1 {
+            font-size: 6vw;
+            position: relative;
+            z-index: 9;
+            mix-blend-mode: difference;
+        }
+
+        .elem img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0;
+            transition: all linear 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main1">
+        <div id="elem1" class="elem">
+            <h1>BIRYANI</h1>
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QklSWUFOSXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>KORMA</h1>
+            <img src="https://media.istockphoto.com/id/1410335829/photo/mutton-sukka-karahi-served-in-a-dish-isolated-on-dark-background-top-view.webp?b=1&s=170667a&w=0&k=20&c=uNcfTLJmu60EYPjK-IVyUk4lkWSH6PtAHdBKz1KbvnQ="
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>KARAHI</h1>
+            <img src="https://media.istockphoto.com/id/1475319235/photo/paneer-lababdar.jpg?s=612x612&w=0&k=20&c=my30xUikzlzjfYDHMpL1VmuObv10NLaH50CoGEhdiZ8="
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>MALAI BOTI</h1>
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8S0FSQUhJfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                alt="">
+        </div>
+        <div class="elem">
+            <h1>ZINGER BURGER</h1>
+            <img src="https://media.istockphoto.com/id/1421101936/photo/nachos-zinger-burger-meal-isolated-on-wooden-board-side-view-on-grey-background-fastfood.webp?b=1&s=170667a&w=0&k=20&c=wSjzzAdLjSPIKfwnKAQkjXpq09by2cak9nIaFJhrVzk="
+                alt="">
+        </div>
+    </div>
+    <script>
+        let elem = document.querySelectorAll(".elem");
+
+
+        elem.forEach(function (val) {
+
+            val.addEventListener("mouseenter", function () {
+                val.childNodes[3].style.opacity = 1
+            });
+            val.addEventListener("mouseleave", function () {
+                val.childNodes[3].style.opacity = 0
+            });
+            val.addEventListener("mousemove", function (dets) {
+                val.childNodes[3].style.left = dets.x + "px"
+            });
+        });
+    </script>
+</body>
+
+</html>

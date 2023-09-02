@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom cursor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cursor {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            mix-blend-mode: difference;
+            transition: all linear 0.2s;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        h1 {
+            font-size: 9vw;
+            font-weight: 900;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="cursor"></div>
+        <h1>FURQAN SHAIR</h1>
+    </div>
+    <script>
+        let main = document.querySelector(".main")
+        let cursor = document.querySelector(".cursor")
+
+        main.addEventListener("mousemove", function (dets) {
+            cursor.style.left = dets.x + "px"
+            cursor.style.top = dets.y + "px"
+        })
+    </script>
+</body>
+
+</html>

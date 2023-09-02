@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Insta love button</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(9, 210, 143);
+        }
+
+        .container {
+            height: 350px;
+            width: 250px;
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .container i {
+            color: white;
+            font-size: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: trasform ease 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1691320518835-f66ee40ab0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDc2fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="">
+        <i class="ri-heart-3-fill"></i>
+    </div>
+    <script>
+        let con = document.querySelector(".container");
+        let ilove = document.querySelector("i");
+
+        con.addEventListener("dblclick", function () {
+            ilove.style.transform = "translate(-50%, -50%) scale(1)";
+            ilove.style.opacity = 0.7;
+            setTimeout(() => {
+                ilove.style.opacity = 0;
+            }, 1500);
+            setTimeout(() => {
+                ilove.style.transform = "translate(-50%, -50%) scale(0)";
+            }, 2000);
+        });
+    </script>
+
+</body>
+
+</html>
